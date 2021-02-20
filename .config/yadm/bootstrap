@@ -109,6 +109,6 @@ fi
 #     )
 # fi
 echo "Updating the yadm repo origin URL"
-yadm remote set-url origin "git@github.com:jmprathab/dotfiles.git"
+yadm remote set-url origin "https://github.com/jmprathab/dotfiles.git"
 
 zsh
