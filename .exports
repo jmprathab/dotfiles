@@ -28,6 +28,8 @@ export npm_config_devdir=$HOME/.cache/node-gyp
 export PYLINTHOME=$HOME/.cache/pylint.d
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 
+export LANG=en_US.UTF-8
+
 # This should be the last line of the file
 # For local changes
 # Don't make edits below this

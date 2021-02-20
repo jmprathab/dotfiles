@@ -62,29 +62,37 @@ if command -v yum >/dev/null 2>&1; then
     sudo yum install vim-gtk zsh-autosuggestions zsh-syntax-highlighting zsh -y
 fi
 
+# install oh-my-zsh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --keep-zshrc --unattended
+
 echo "changing shell to zsh boi"
 chsh -s `which zsh`
 echo "you might need to log out and back in for changes to take effect"
 
-echo "Please enter the name you would like to use for git"
-read name
-echo "Please enter the email address you would like to use for git"
-read email
+echo "Do you want to update name and email for Git?(y/n)"
+read answer2
+
+if [ "$answer2" != "${answer2#[Yy]}" ] ;then
+    #user said yes
+    echo "Please enter the name you would like to use for git"
+    read name
+    echo "Please enter the email address you would like to use for git"
+    read email
+
+    git config --global user.name "$name"
+    git config --global user.email "$email"
+fi
 
 echo "Do you want to always enable gpg signing" 
 echo "If you do not know what this means just press n"
 echo "(y/n)"
 
-read answer2
-if [ "$answer2" == "${answer2#[Yy]}" ] ;then
-    #user said no
+read answer3
+if [ "$answer3" != "${answer3#[Nn]}" ] ;then
+    #user said yes
     git config --global --unset commit.gpgsign  
     git config --global --unset user.signingkey
 fi
-
-
-git config --global user.name "$name"
-git config --global user.email "$email"
 
 # Enable the following if you use encryption
 # echo "Are you overclockedllama?"
@@ -104,15 +112,3 @@ echo "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jmprathab/dotfiles.git"
 
 zsh
-
-
-
-
-
-
-
-
-
-
-
-

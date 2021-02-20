@@ -4,5 +4,5 @@
 # Personal preference is 'robbyrussel' or 'spaceship'
 export ZSH_THEME="af-magic"
 
-## Fix Termius problem
+# Fix Termius problem
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
