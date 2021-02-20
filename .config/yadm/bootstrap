@@ -57,6 +57,11 @@ if command -v pacman >/dev/null 2>&1; then
     sudo pacman -Syu gvim zsh-autosuggestions zsh-syntax-highlighting zsh --noconfirm
 fi
 
+if command -v yum >/dev/null 2>&1; then
+    sudo yum update
+    sudo yum install vim-gtk zsh-autosuggestions zsh-syntax-highlighting zsh -y
+fi
+
 echo "changing shell to zsh boi"
 chsh -s `which zsh`
 echo "you might need to log out and back in for changes to take effect"
@@ -81,21 +86,22 @@ fi
 git config --global user.name "$name"
 git config --global user.email "$email"
 
-echo "Are you overclockedllama?"
-read ans
+# Enable the following if you use encryption
+# echo "Are you overclockedllama?"
+# read ans
 
-if [ "$ans" != "${ans#[Yy]}" ] ;then
-    # user said yes
+# if [ "$ans" != "${ans#[Yy]}" ] ;then
+#     # user said yes
 
-    yadm decrypt || 
-    (
-        export GPG_TTY=$(tty) && 
-        yadm decrypt ||
-        echo unable to decrypt
-    )
-fi
+#     yadm decrypt || 
+#     (
+#         export GPG_TTY=$(tty) && 
+#         yadm decrypt ||
+#         echo unable to decrypt
+#     )
+# fi
 echo "Updating the yadm repo origin URL"
-yadm remote set-url origin "git@github.com:soneji/dotfiles.git"
+yadm remote set-url origin "git@github.com:jmprathab/dotfiles.git"
 
 zsh
 
