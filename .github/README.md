@@ -68,9 +68,3 @@ Please report any issues you have [here](https://github.com/jmprathab/dotfiles/i
 * [pendowski](https://github.com/pendowski/dotfiles)
 * https://gist.github.com/bentheax/a0307d464b7534593eac
 * https://medium.com/@julius.dehner/how-i-manage-my-dotfiles-with-yadm-4cbdb0d35d34
-
-## Todo
-
-- [ ] Export iterm 2 config
-- [ ] Update brewfile with necessary programs
-- [ ] Disable NVM
