@@ -1,0 +1,2 @@
+# I have some programs installed using brew into sbin
+export PATH="/usr/local/sbin:$PATH"

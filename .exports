@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Make vim the default editor.
+export EDITOR='vim';
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}";
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# make hist files go to cache. don't clog my homedir
+export PYTHONHISTFILE=$HOME/.cache/.python_history
+export SQLITE_HISTORY=$HOME/.cache/.sqlite_history
+export GRADLE_USER_HOME=$HOME/.cache/gradle
+export ANDROID_SDK_HOME=$HOME/.cache/android
+export ANDROID_AVD_HOME=$HOME/.cache/androidavd
+export VSCODE_EXTENSIONS=$HOME/.config/vscode
+export LESSHISTFILE='-'
+export npm_config_devdir=$HOME/.cache/node-gyp
+export PYLINTHOME=$HOME/.cache/pylint.d
+export VIRTUAL_ENV_DISABLE_PROMPT=0
+
+# This should be the last line of the file
+# For local changes
+# Don't make edits below this
+[ -f ".exports.local" ] && source ".exports.local"

@@ -1,30 +1,24 @@
+# Path to your oh-my-zsh installation.
+export ZSH="${HOME}/.oh-my-zsh"
+
+# To display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
 # shellcheck shell=sh
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.cache/zsh-histfile
-HISTSIZE=10000
-SAVEHIST=10000
 setopt appendhistory autocd beep notify
 unsetopt extendedglob nomatch
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
-export TERM="xterm-256color"
+# Manage history well
+HISTFILE=~/.cache/zsh-histfile
+HISTSIZE=10000
+SAVEHIST=10000
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+# Source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
-
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:~/git-clones/flutter/bin
-export PATH=$PATH:/Library/TeX/texbin
-export PATH=$PATH:/Applications/MATLAB_R2019b.app/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:/Library/Ruby/Gems/2.6.0
-export PATH=$PATH:~/.gem/ruby/2.6.0
-export PATH=$PATH:/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 #ENABLE_CORRECTION="true"
 #setopt correct_all
 
@@ -38,9 +32,9 @@ if [ -x "$(command -v thefuck)" ]; then
     eval $(thefuck --alias)
 fi
 
-export VIRTUAL_ENV_DISABLE_PROMPT=0
-
 fpath=( "$HOME/.config/zfunctions" $fpath )
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
@@ -67,4 +61,16 @@ fi
 if [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,exports,aliases,functions,extra}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# This should be the last line of the file
+# For local changes
+# Don't make edits below this
+[ -f ".zshrc.local" ] && source ".zshrc.local"
