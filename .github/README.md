@@ -73,4 +73,4 @@ Please report any issues you have [here](https://github.com/jmprathab/dotfiles/i
 
 - [ ] Export iterm 2 config
 - [ ] Update brewfile with necessary programs
-- [ ] Disable spaceship zsh
+- [ ] Disable NVM

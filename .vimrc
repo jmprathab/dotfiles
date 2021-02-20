@@ -106,6 +106,4 @@ augroup END
 augroup filetypedetect
     au BufRead,BufNewFile .aliases setfiletype sh
 augroup END
-augroup filetypedetect
-    au BufRead,BufNewFile spaceship-prompt setfiletype sh
-augroup END
+

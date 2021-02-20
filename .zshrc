@@ -23,16 +23,7 @@ autoload -Uz compinit && compinit -d ~/.cache/zcompdump
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-fpath=( "$HOME/.config/zfunctions" $fpath )
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
-if [ -f ~/.config/spaceship-prompt ]; then
-    . ~/.config/spaceship-prompt
-fi
 
 if [ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
