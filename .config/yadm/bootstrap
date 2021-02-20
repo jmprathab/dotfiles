@@ -62,6 +62,7 @@ if command -v yum >/dev/null 2>&1; then
 fi
 
 # install oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --keep-zshrc --unattended
 
 echo "changing shell to zsh boi"
