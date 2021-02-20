@@ -5,6 +5,10 @@ set number
 set clipboard^=unnamed,unnamedplus
 set backspace=indent,eol,start
 
+" Centralize backups, swapfiles
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+
 " undo ting to make persistant undos
 set undodir=~/.vim/undodir
 set undofile
