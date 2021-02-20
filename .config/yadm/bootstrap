@@ -58,7 +58,6 @@ if command -v pacman >/dev/null 2>&1; then
 fi
 
 if command -v yum >/dev/null 2>&1; then
-    sudo yum update
     sudo yum install vim-gtk zsh-autosuggestions zsh-syntax-highlighting zsh -y
 fi
 
