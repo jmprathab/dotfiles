@@ -3,7 +3,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UPDATE_PROMPT=true
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true" # Sometimes this is annoying.
 
 # Lines configured by zsh-newuser-install
 setopt appendhistory autocd notify

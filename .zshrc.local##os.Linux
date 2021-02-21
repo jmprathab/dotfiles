@@ -13,6 +13,9 @@ export ZSH_COMPDUMP=~/.cache/zcompdump
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 # Fix Termius problem

@@ -36,7 +36,7 @@ if [ "$system_type" = "Darwin" ]; then
             brew bundle --file=~/.config/brewfile
         fi
     else
-        brew install vim zsh-autosuggestions zsh-syntax-highlighting coreutils pinentry-mac 2>/dev/null
+        brew install vim coreutils pinentry-mac 2>/dev/null
         brew cask install visual-studio-code 2>/dev/null
     fi
 
@@ -50,20 +50,24 @@ fi
 
 if command -v apt-get >/dev/null 2>&1; then
     sudo apt-get update
-    sudo apt-get install vim-gtk zsh-autosuggestions zsh-syntax-highlighting zsh -y
+    sudo apt-get install vim-gtk zsh -y
 fi
 
 if command -v pacman >/dev/null 2>&1; then
-    sudo pacman -Syu gvim zsh-autosuggestions zsh-syntax-highlighting zsh --noconfirm
+    sudo pacman -Syu gvim zsh --noconfirm
 fi
 
 if command -v yum >/dev/null 2>&1; then
-    sudo yum install vim-gtk zsh-autosuggestions zsh-syntax-highlighting zsh -y
+    sudo yum install vim-gtk zsh -y
 fi
 
 # install oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --keep-zshrc --unattended
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 echo "changing shell to zsh boi"
 chsh -s `which zsh`
