@@ -1,5 +1,19 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# Personal preference is 'robbyrussel' or 'spaceship'
-ZSH_THEME="random"
+export ZSH_THEME="random"
+
+# Change location of compdump
+export ZSH_COMPDUMP=~/.cache/zcompdump
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    git
+)
+
+# Source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
