@@ -5,7 +5,9 @@ services:
     image: jupyter/minimal-notebook:latest
     restart: unless-stopped
     # Password is 'jupyterlab'
-    entrypoint: start-notebook.sh --NotebookApp.password='sha1:eaccb17f0bfa:3894d6bb2ff94c757ee358a3107e75e034ec061f'
+    # Start the service for the first time. 
+    # Then stop the container and restart it after uncommenting the following line.
+    # entrypoint: start-notebook.sh --NotebookApp.password='sha1:eaccb17f0bfa:3894d6bb2ff94c757ee358a3107e75e034ec061f'
     environment:
       - JUPYTER_ENABLE_LAB=yes
     expose:
