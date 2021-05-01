@@ -2,7 +2,7 @@ version: "3.9"
 services:
   jupyterlab:
     container_name: jupyterlab
-    image: jupyter/minimal-notebook:latest
+    image: jupyter/tensorflow-notebook:latest
     restart: unless-stopped
     # Password is 'jupyterlab'
     # Start the service for the first time. 
