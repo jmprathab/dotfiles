@@ -55,7 +55,7 @@ yadm clone -f https://github.com/jmprathab/dotfiles.git
 
 If you encounter any errors when running the bootstrap script, you can always rerun it with 
 ```bash
-./.config/yadm/bootstrap
+~/.config/yadm/bootstrap
 ```
 ### Others
 
