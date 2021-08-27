@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  homer:
+    image: b4bz/homer
+    #To build from source, comment previous line and uncomment below
+    #build: .
+    container_name: homer
+    volumes:
+      - '~/Arena/homer:/www/assets'
+    ports:
+      - 80:8080
+    #environment:
+    #  - UID=1000
+    #  - GID=1000
+    restart: unless-stopped

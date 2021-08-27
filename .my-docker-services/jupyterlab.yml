@@ -11,8 +11,8 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
     expose:
-      - "8888"
+      - "9010"
     ports:
-      - "8888:8888"
+      - "9010:8888"
     volumes:
-      - /home/devbld/jupyterlab/jovyan:/home/jovyan
+      - '~/Arena/jupyterlab:/home/jovyan'

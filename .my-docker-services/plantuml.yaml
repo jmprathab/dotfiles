@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  plantuml:
+    image: plantuml/plantuml-server:jetty
+    container_name: plantuml
+    expose:
+      - "9030"
+    ports:
+      - "9030:8080"
+    restart: unless-stopped
