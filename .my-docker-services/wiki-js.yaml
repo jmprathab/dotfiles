@@ -1,4 +1,5 @@
 version: "3"
+# My usual wiki.js password is 'wiki.js'
 services:
   db:
     image: postgres:11-alpine
