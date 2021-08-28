@@ -66,3 +66,7 @@ services:
         subtitle: "Personal Wiki"
         tag: "app"
         url: "http://localhost:9040"
+      - name: "Focalboard"
+        subtitle: "Project Management"
+        tag: "app"
+        url: "http://localhost:9060"
