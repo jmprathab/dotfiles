@@ -78,3 +78,7 @@ services:
         subtitle: "Apache Spark"
         tag: "app"
         url: "http://localhost:8077"
+      - name: "Apache Spark WebUI"
+        subtitle: "Apache Spark"
+        tag: "app"
+        url: "http://localhost:4040"
